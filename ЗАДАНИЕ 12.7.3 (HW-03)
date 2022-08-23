@@ -1,0 +1,12 @@
+per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+
+money = int(input("введите сумму вклада: "))
+
+deposite = []
+
+for key in per_cent:
+    deposite_i = int(per_cent[key] * money / 100)
+
+    deposite.append(deposite_i)
+
+print("Максимальная сумма, которую вы можете заработать", max(deposite),"в банке", max(per_cent, key=per_cent.get))
