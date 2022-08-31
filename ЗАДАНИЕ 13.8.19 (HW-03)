@@ -1,0 +1,41 @@
+while True:
+    try:
+        tickets = int(input("Сколько билетов необходимо? "))
+        if 0 < tickets < 99999999:
+            break
+        else:
+            raise ValueError("Некорректное количество билетов")
+    except ValueError:
+        print("Ошибка ввода данных")
+
+participant = []   # список посетителей
+
+for i in range(tickets):
+    while True:
+        try:
+            age_i = int(input(f"Введите возраст {i + 1} посетителя "))
+            if 0 <= age_i <= 100:
+                break
+            else:
+                raise ValueError("Неправильный возраст")
+        except ValueError:
+            print(f"Ошибка ввода возраста {i+1} посетителя")
+
+    participant.append(age_i)
+
+cost = 0
+
+for age_i in participant:
+    if 25 <= age_i <= 100:
+        cost += 1390
+    elif 18 <= age_i <25:
+        cost += 990
+    else:
+        cost += 0
+
+if tickets > 3:
+    cost = cost * 0.9
+else:
+    cost = cost
+
+print(f"Общая стоимость билетов {cost} руб")
