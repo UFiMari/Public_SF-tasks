@@ -1,0 +1,50 @@
+def bubble(array):
+    for i in range(len(array)):
+        for j in range(len(array) - i - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+    return array
+
+
+def binary_search(array, element, left, right):
+
+    if left > right:
+        return None
+
+    middle = (right + left) // 2
+
+    if array[middle] >= element:
+        return middle - 1
+
+    elif element < array[middle]:
+        return binary_search(array, element, left, middle - 1)
+
+    else:
+        return binary_search(array, element, middle + 1, right)
+
+while True:
+    try:
+        array = list(map(float, input('Введите числа через пробел: ').split()))
+        break
+    except ValueError:
+        print("Ошибка ввода данных")
+
+print(array)
+
+while True:
+    try:
+        num = float(input('введите число для сравнения:  '))
+        break
+    except ValueError:
+        print("Ошибка ввода данных")
+
+print(num)
+
+sort_lst = bubble(array)
+
+print(sort_lst)
+
+if num <= sort_lst[0] or num > sort_lst[-1]:
+    print('Число не соответствует условиям ')
+else:
+    print(binary_search(sort_lst, num, 0, len(sort_lst)))
