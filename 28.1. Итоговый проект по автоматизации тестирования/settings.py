@@ -1,7 +1,7 @@
 class Settings:
-    VALID_PHONE = "+79043331616"
+    VALID_PHONE = "+7904*******"
     VALID_PHONE_PASS = "K!@agdb@r4w3l6"
-    INVALID_PHONE = "+7043331616"
+    INVALID_PHONE = "+704*******"
     INVALID_PHONE_PASS = "K!@agdb@r4w3l"
     ZERO_LOGIN = ""
     ZERO_PASS = ""
@@ -20,5 +20,5 @@ class Settings:
     NEW_USER_NAME = "Марина"
     NEW_UESR_SURNAME = "Маринина"
     NEW_MAIL = "testovayamarina.marina@yandex.ru"
-    NEW_PHONE = "+79043331616"
+    NEW_PHONE = "+7904*******"
     NEW_REG_PASS = "Marina_1616"
